@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sybelle.GPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2em;
+        }
+        input[type="file"] {
+            margin-bottom: 1em;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.5em 1em;
+            margin: 1em;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            display: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sybelle.GPT</h1>
+        <p>L'intelligence artificielle qui te pose des questions sur tes cours</p>
+    </header>
+    <main>
+        <input type="file" id="pdfInput" accept="application/pdf">
+        <button id="relevantButton">Question pertinente</button>
+        <button id="irrelevantButton">Question inutile</button>
+    </main>
+    <script>
+        document.getElementById("pdfInput").addEventListener("change", function() {
+            if (this.files.length > 0 && this.files[0].type === "application/pdf") {
+                document.getElementById("relevantButton").style.display = "inline-block";
+                document.getElementById("irrelevantButton").style.display = "inline-block";
+            } else {
+                document.getElementById("relevantButton").style.display = "none";
+                document.getElementById("irrelevantButton").style.display = "none";
+            }
+        });
+
+        document.getElementById("relevantButton").onclick = function() {
+            alert("Contacte Sybelle au 07 81 74 10 15, mais ne t'attends pas à des questions pertinentes.");
+        }
+        document.getElementById("irrelevantButton").onclick = function() {
+            alert("Contacte Sybelle au 07 81 74 10 15, elle te posera plein de questions non pertinentes sur le cours.");
+        }
+    </script>
+</body>
+</html>
